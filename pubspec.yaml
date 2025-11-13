@@ -1,0 +1,52 @@
+name: notes_app
+description: Application Flutter de gestion de notes (débutant, sqflite)
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  sqflite: ^2.3.3
+  path: ^1.9.0
+  shared_preferences: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.1      # ← AJOUT (icônes app)
+  flutter_native_splash: ^2.4.2        # ← AJOUT (splash natif)
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/splash.png
+
+# ====== Splash natif (démarrage) ======
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "#121212"
+  image: "assets/splash.png"
+  android: true
+  ios: true
+  web: true
+  android_gravity: center
+  ios_content_mode: center
+  fullscreen: true
+
+# ====== Icône application (launcher) ======
+flutter_launcher_icons:
+  image_path: "assets/icon.png"         # ← fournis ce fichier (ideal 1024x1024)
+  android: true
+  ios: true
+  web:
+    generate: true
+    image_path: "assets/icon.png"
+    favicon: true
+  adaptive_icon_background: "#4A90E2"   # fond Android
+  adaptive_icon_foreground: "assets/icon.png"
+  # Optionnel Android 13+
+  # adaptive_icon_monochrome: "assets/icon_monochrome.png"
